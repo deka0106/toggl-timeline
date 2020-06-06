@@ -1,0 +1,32 @@
+.form {
+  display: block;
+}
+
+.input {
+  width: 100%;
+  height: 2em;
+  border: 1px solid #ddd;
+  &:focus {
+    outline: 0;
+    border: 1px solid #ebb;
+  }
+}
+
+.submit {
+  margin-top: 16px;
+  width: 100%;
+  height: 2em;
+  border: 0;
+  color: #fff;
+  background-color: #f99;
+  cursor: pointer;
+  &:hover {
+    background-color: #f88;
+  }
+  &:active {
+    background-color: #f66;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
