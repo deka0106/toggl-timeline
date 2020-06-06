@@ -8,6 +8,7 @@
     "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore ."
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "modern-css-reset": "^1.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

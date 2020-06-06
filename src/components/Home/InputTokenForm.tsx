@@ -1,5 +1,6 @@
 import React, { FormEvent } from 'react'
 import styles from './InputTokenForm.module.scss'
+import { isValidApiToken } from '../../auth'
 
 interface Props {}
 interface State {
@@ -15,9 +16,9 @@ export class InputTokenForm extends React.Component<Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log(this.state.token)
+    console.log('isValid', await isValidApiToken(this.state.token))
   }
 
   render() {
