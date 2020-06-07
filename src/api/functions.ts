@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Response, User } from 'toggl'
+import { Response, User, TimeEntry } from 'toggl'
 import { saveApiToken } from '../auth'
 
 const client = axios.create({
@@ -27,4 +27,16 @@ export async function authenticate(token: string) {
   } catch {
     return false
   }
+}
+
+export async function getTimeEntries(
+  params: {
+    start_date?: Date
+    end_date?: Date
+  } = {}
+) {
+  const response = await client.get<TimeEntry[]>('/time_entries', {
+    params,
+  })
+  return response.data
 }

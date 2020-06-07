@@ -18,7 +18,7 @@ declare module 'toggl' {
     language: string
     image_url: string
     sidebar_piechart: boolean
-    at: string
+    at: string // Date
     new_blog_post: {
       title: string
       link: string
@@ -28,5 +28,17 @@ declare module 'toggl' {
     send_timer_notifications: boolean
     openid_enabled: boolean
     timezone: string
+  }
+
+  interface TimeEntry {
+    id: number
+    pid: number
+    wid: number
+    billable: boolean
+    start: string // Date
+    stop: string // Date
+    duration: number
+    description: string
+    at: string // Date
   }
 }
