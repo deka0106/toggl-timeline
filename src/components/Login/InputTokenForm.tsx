@@ -1,39 +1,24 @@
-import React, { FormEvent } from 'react'
+import React, { FC, useState, FormEvent } from 'react'
 import styles from './InputTokenForm.module.scss'
-import { isValidApiToken } from '../../auth'
 
-interface Props {}
-interface State {
-  token: string
-}
+export const InputTokenForm: FC = () => {
+  const [token, setToken] = useState('')
 
-export class InputTokenForm extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      token: '',
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  async handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log('isValid', await isValidApiToken(this.state.token))
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit} className={styles.form}>
-        <input
-          type="text"
-          value={this.state.token}
-          onChange={(e) => this.setState({ token: e.target.value })}
-          className={styles.input}
-        />
-        <button type="submit" className={styles.submit}>
-          ログイン
-        </button>
-      </form>
-    )
-  }
+  return (
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <input
+        type="text"
+        value={token}
+        onChange={(e) => setToken(e.target.value)}
+        className={styles.input}
+      />
+      <button type="submit" className={styles.submit}>
+        ログイン
+      </button>
+    </form>
+  )
 }

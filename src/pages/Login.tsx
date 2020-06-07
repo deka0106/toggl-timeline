@@ -1,8 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { InputTokenView } from '../components/Login/InputTokenView'
 
-export class Login extends React.Component {
-  render() {
-    return <InputTokenView />
-  }
+export const Login: FC = () => {
+  return <InputTokenView />
 }
