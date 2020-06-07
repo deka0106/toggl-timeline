@@ -18,7 +18,6 @@ export async function isValidApiToken(token: string) {
   return await apis.authenticate(token)
 }
 
-export async function isAuthenticated() {
-  const token = getApiToken()
-  return token && (await isValidApiToken(token))
+export function isAuthenticated() {
+  return getApiToken() !== null
 }
