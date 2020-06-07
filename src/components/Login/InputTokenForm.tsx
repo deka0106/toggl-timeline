@@ -9,7 +9,7 @@ export const InputTokenForm: FC = () => {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (await apis.authenticate(token)) {
+    if (await apis.validateApiToken(token)) {
       history.push('/')
     } else {
       // TODO: error handling

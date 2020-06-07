@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import { Redirect } from 'react-router-dom'
-import { isAuthenticated } from '.'
+import { authenticate } from '.'
 
 export const Auth: FC<{
   login: string
 }> = (props) => {
-  if (isAuthenticated()) {
+  if (authenticate()) {
     return <>{props.children}</>
   } else {
     return <Redirect to={props.login} />

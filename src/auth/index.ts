@@ -14,10 +14,12 @@ export function clearApiToken() {
   localStorage.removeItem(KEY)
 }
 
-export async function isValidApiToken(token: string) {
-  return await apis.authenticate(token)
-}
-
-export function isAuthenticated() {
-  return getApiToken() !== null
+export function authenticate() {
+  const token = getApiToken()
+  if (token !== null) {
+    apis.setApiToken(token)
+    return true
+  } else {
+    return false
+  }
 }
