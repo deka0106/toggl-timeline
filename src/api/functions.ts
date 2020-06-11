@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 import { Response, User, TimeEntry } from 'toggl'
 import { saveApiToken } from '../auth'
 
@@ -6,6 +7,14 @@ const TOGGL_API_BASE_URL = 'https://www.toggl.com/api/v8'
 
 const client = axios.create({
   baseURL: TOGGL_API_BASE_URL,
+})
+
+client.interceptors.request.use((config) => {
+  config.paramsSerializer = (params) =>
+    qs.stringify(params, {
+      serializeDate: (date: Date) => date.toISOString(),
+    })
+  return config
 })
 
 export function setApiToken(token: string) {
