@@ -58,3 +58,8 @@ export async function getTimeEntries(
   })
   return response.data
 }
+
+export async function getMe() {
+  const response = await client.get<Response<User>>('/me')
+  return response.data.data
+}
