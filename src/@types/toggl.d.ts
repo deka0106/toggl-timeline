@@ -30,6 +30,19 @@ declare module 'toggl' {
     timezone: string
   }
 
+  interface Project {
+    id: number
+    wid: number
+    cid: number
+    name: string
+    billable: boolean
+    is_private: boolean
+    active: boolean
+    at: string // Date
+    template_id: number
+    color: string
+  }
+
   interface TimeEntry {
     id: number
     pid: number
