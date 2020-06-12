@@ -1,0 +1,24 @@
+:root {
+  --theme-accent-primary: #e24f54;
+  --theme-accent-secondary: #88cf8f;
+  --theme-accent-error: #e20505;
+  --theme-background-primary: #ffffff;
+  --theme-background-secondary: #f4f1f1;
+  --theme-ui-primary: #0a0a0a;
+  --theme-ui-secondary: #666666;
+  --theme-ui-tertiary: #cccccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  // TODO: make dark theme
+  :root {
+    --theme-accent-primary: #e24f54;
+    --theme-accent-secondary: #88cf8f;
+    --theme-accent-error: #e20505;
+    --theme-background-primary: #ffffff;
+    --theme-background-secondary: #f4f1f1;
+    --theme-ui-primary: #0a0a0a;
+    --theme-ui-secondary: #666666;
+    --theme-ui-tertiary: #cccccc;
+  }
+}

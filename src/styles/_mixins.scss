@@ -1,0 +1,41 @@
+@import './variables';
+
+@mixin size-h1 {
+  font-size: 1.5rem;
+}
+
+@mixin size-h2 {
+  font-size: 1.25rem;
+}
+
+@mixin size-h3 {
+  font-size: 1.125rem;
+}
+
+@mixin size-body1 {
+  font-size: 1rem;
+}
+
+@mixin size-body2 {
+  font-size: 0.875rem;
+}
+
+@mixin size-caption {
+  font-size: 0.75rem;
+}
+
+@mixin weight-regular {
+  font-weight: 400;
+}
+
+@mixin weight-medium {
+  font-weight: 500;
+}
+
+@mixin weight-bold {
+  font-weight: 700;
+}
+
+@mixin border-radius-default {
+  border-radius: 4px;
+}
