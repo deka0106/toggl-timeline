@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { TokenInput } from './TokenInput'
 import { SubmitButton } from './SubmitButton'
 
-export const InputTokenForm: FC = () => {
+export const LoginForm: FC = () => {
   const history = useHistory()
   const [token, setToken] = useState('')
   const [error, setError] = useState<string>()

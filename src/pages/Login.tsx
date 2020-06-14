@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { InputTokenView } from 'components/Login/InputTokenView'
+import { LoginMainView } from 'components/Login/LoginMainView'
 
 export const Login: FC = () => {
-  return <InputTokenView />
+  return <LoginMainView />
 }
