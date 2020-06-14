@@ -15,4 +15,8 @@
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    background-color: $theme-accent-primary-active;
+  }
 }
