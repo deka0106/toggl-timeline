@@ -9,6 +9,7 @@
   background-color: $theme-accent-primary;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s;
   @include size-h3;
   @include border-radius-default;
 
