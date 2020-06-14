@@ -1,4 +1,4 @@
-import { apis } from '../api'
+import { apis } from 'api'
 
 const KEY = 'toggl_api_token'
 

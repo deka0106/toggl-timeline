@@ -1,6 +1,6 @@
 import React, { FC, useState, FormEvent } from 'react'
 import styles from './index.module.scss'
-import { apis } from '../../../api'
+import { apis } from 'api'
 import { useHistory } from 'react-router-dom'
 import { TokenInput } from './TokenInput'
 import { SubmitButton } from './SubmitButton'

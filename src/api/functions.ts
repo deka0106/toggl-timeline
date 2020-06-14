@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import { Response, User, TimeEntry, Project } from 'toggl'
-import { saveApiToken } from '../auth'
+import { saveApiToken } from 'auth'
 
 const TOGGL_API_BASE_URL = 'https://www.toggl.com/api/v8'
 
