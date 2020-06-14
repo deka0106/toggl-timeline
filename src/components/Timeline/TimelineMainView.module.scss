@@ -1,0 +1,32 @@
+@import 'styles/common';
+
+.app {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.navigation {
+  flex-grow: 0;
+  height: 100%;
+}
+
+.container {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex-grow: 0;
+  width: 100%;
+}
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+}
