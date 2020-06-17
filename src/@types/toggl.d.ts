@@ -54,4 +54,19 @@ declare module 'toggl' {
     description: string
     at: string // Date
   }
+
+  interface Workspace {
+    id: number
+    name: string
+    premium: boolean
+    admin: boolean
+    default_hourly_rate: number
+    default_currency: string
+    only_admins_may_create_projects: boolean
+    only_admins_see_billable_rates: boolean
+    rounding: number
+    rounding_minutes: number
+    at: string // Date
+    logo_url: string
+  }
 }

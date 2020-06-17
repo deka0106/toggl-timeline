@@ -1,6 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
-import { Response, User, TimeEntry, Project } from 'toggl'
+import { Response, User, TimeEntry, Project, Workspace } from 'toggl'
 import { saveApiToken } from 'auth'
 
 const TOGGL_API_BASE_URL = 'https://www.toggl.com/api/v8'
@@ -67,4 +67,14 @@ export async function getMe() {
 export async function getProject(id: number) {
   const response = await client.get<Response<Project>>(`/projects/${id}`)
   return response.data.data
+}
+
+export async function getWorkspaces() {
+  const response = await client.get<Workspace[]>('/workspaces')
+  return response.data
+}
+
+export async function getWorkspaceProjects(id: number) {
+  const response = await client.get<Project[]>(`/workspaces/${id}/projects`)
+  return response.data
 }
