@@ -43,13 +43,15 @@ export const Provider: FC = ({ children }) => {
 
   useEffect(() => {
     const asyncData = async () => {
-      const ws = await apis.getWorkspaces()
-      for (const w of ws) {
-        const ps = await apis.getWorkspaceProjects(w.id)
-        setWorkspaceProjects({ ...workspaceProjects, [w.id]: ps })
-        ps.forEach((p) => setProjects({ ...projects, [p.id]: p }))
+      const workspaces = await apis.getWorkspaces()
+      for (const workspace of workspaces) {
+        const projects = await apis.getWorkspaceProjects(workspace.id)
+        setWorkspaceProjects((wps) => ({ ...wps, [workspace.id]: projects }))
+        projects.forEach((project) =>
+          setProjects((ps) => ({ ...ps, [project.id]: project }))
+        )
       }
-      setWorkspaces(ws)
+      setWorkspaces(workspaces)
     }
 
     asyncData()
