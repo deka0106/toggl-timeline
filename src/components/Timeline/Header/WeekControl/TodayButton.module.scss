@@ -1,0 +1,21 @@
+@import 'styles/common';
+
+.container {
+  height: 32px;
+  padding: 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $theme-ui-secondary;
+  color: $theme-ui-secondary;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+
+  @include size-body1;
+  @include border-radius-default;
+
+  &:hover {
+    background-color: $theme-background-secondary;
+  }
+}

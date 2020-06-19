@@ -1,0 +1,17 @@
+@import 'styles/common';
+
+.container {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: $theme-ui-secondary;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $theme-background-secondary;
+  }
+}
