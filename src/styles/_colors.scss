@@ -1,0 +1,30 @@
+$colors: (
+  #0b83d9,
+  #9e5bd9,
+  #d94182,
+  #e36a00,
+  #bf7000,
+  #2da608,
+  #06a893,
+  #c9806b,
+  #465bb3,
+  #990099,
+  #c7af14,
+  #566614,
+  #991102,
+  #d92b2b,
+  #525266
+);
+
+@each $color in $colors {
+  $index: index($colors, $color) - 1;
+  .color-#{$index} {
+    color: $color;
+  }
+  .background-color-#{$index} {
+    background-color: $color;
+  }
+  .border-color-#{$index} {
+    border-color: $color;
+  }
+}
