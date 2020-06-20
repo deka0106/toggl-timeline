@@ -1,0 +1,13 @@
+@import 'styles/common.scss';
+
+.container {
+  padding: 0 40px;
+  height: 80px;
+}
+
+.days {
+  height: 100%;
+  padding-left: 80px;
+  padding-right: 40px;
+  border-bottom: 2px solid $theme-ui-tertiary;
+}
