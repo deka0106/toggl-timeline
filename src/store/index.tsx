@@ -34,11 +34,15 @@ export const Provider: FC = ({ children }) => {
   const getWorkspaceProjects = (id: number) => workspaceProjects[id]
   const getProject = (id: number) => projects[id]
 
-  const displayProjectIds = new Set<number>()
-  const isDisplayProject = (id: number) => displayProjectIds.has(id)
+  const [displayProjectIds, setDisplayProjectIds] = useState<number[]>([])
+  const isDisplayProject = (id: number) => displayProjectIds.includes(id)
   const setDisplayProject = (id: number, value: boolean) => {
-    if (value) displayProjectIds.add(id)
-    else displayProjectIds.delete(id)
+    if (value) {
+      if (!displayProjectIds.includes(id))
+        setDisplayProjectIds((ids) => [...ids, id])
+    } else {
+      setDisplayProjectIds((ids) => ids.filter((i) => i !== id))
+    }
   }
 
   useEffect(() => {
@@ -47,9 +51,10 @@ export const Provider: FC = ({ children }) => {
       for (const workspace of workspaces) {
         const projects = await apis.getWorkspaceProjects(workspace.id)
         setWorkspaceProjects((wps) => ({ ...wps, [workspace.id]: projects }))
-        projects.forEach((project) =>
+        projects.forEach((project) => {
           setProjects((ps) => ({ ...ps, [project.id]: project }))
-        )
+          setDisplayProjectIds((ids) => ids.concat(projects.map((p) => p.id)))
+        })
       }
       setWorkspaces(workspaces)
     }
