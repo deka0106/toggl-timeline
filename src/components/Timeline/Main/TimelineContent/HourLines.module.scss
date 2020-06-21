@@ -1,0 +1,44 @@
+@import 'styles/common.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.hours {
+  flex-grow: 0;
+  width: 60px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hour {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .number {
+    color: $theme-ui-primary;
+    @include size-h3;
+  }
+
+  .unit {
+    padding-left: 4px;
+    color: $theme-ui-secondary;
+    @include size-body2;
+  }
+}
+
+.lines {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .line {
+    flex-grow: 1;
+    border-bottom: 1px solid $theme-ui-tertiary;
+  }
+}

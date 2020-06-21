@@ -10,6 +10,8 @@ import { getWeekStart } from 'utils/date'
 import { apis } from 'api'
 
 interface Props {
+  height: number
+  setHeight: (height: number) => void
   week: Date
   setWeek: (week: Date) => void
   workspaces: Workspace[]
@@ -22,6 +24,7 @@ interface Props {
 const Context = createContext<Props>({} as Props)
 
 export const Provider: FC = ({ children }) => {
+  const [height, setHeight] = useState<number>(100)
   const [week, setWeek] = useState<Date>(getWeekStart(new Date()))
   const [workspaces, setWorkspaces] = useState<Workspace[]>([])
 
@@ -65,6 +68,8 @@ export const Provider: FC = ({ children }) => {
   return (
     <Context.Provider
       value={{
+        height,
+        setHeight,
         week,
         setWeek,
         workspaces,
