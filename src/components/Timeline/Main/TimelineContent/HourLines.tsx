@@ -16,7 +16,7 @@ export const HourLines: FC = () => {
       >
         {range(1, 24).map((i) => {
           return (
-            <div className={styles.hour}>
+            <div className={styles.hour} key={i}>
               <span className={styles.number}>{i}</span>
               <span className={styles.unit}>時</span>
             </div>
@@ -24,8 +24,8 @@ export const HourLines: FC = () => {
         })}
       </div>
       <div className={styles.lines}>
-        {range(24).map(() => {
-          return <div className={styles.line}></div>
+        {range(24).map((i) => {
+          return <div className={styles.line} key={i}></div>
         })}
       </div>
     </div>

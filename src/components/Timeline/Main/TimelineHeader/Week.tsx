@@ -17,7 +17,7 @@ export const Week: FC = () => {
     <div className={styles.container}>
       {days.map((day) => {
         return (
-          <div className={styles.day}>
+          <div className={styles.day} key={day.getTime()}>
             <Day date={day} />
           </div>
         )
