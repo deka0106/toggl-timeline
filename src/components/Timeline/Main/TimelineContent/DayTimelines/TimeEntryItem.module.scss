@@ -1,0 +1,12 @@
+@import 'styles/common';
+
+.container {
+  width: 98%;
+  left: 1%;
+  position: absolute;
+  overflow: hidden;
+  color: white;
+  font-size: 0.5rem;
+  padding: 0 2px;
+  @include border-radius-default;
+}
