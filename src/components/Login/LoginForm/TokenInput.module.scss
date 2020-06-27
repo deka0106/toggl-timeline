@@ -33,6 +33,7 @@
   background-color: $theme-background-secondary;
   border: 2px solid $theme-background-secondary;
   transition: border 0.2s;
+  color: $theme-ui-primary;
   @include border-radius-default;
 
   &.error {
