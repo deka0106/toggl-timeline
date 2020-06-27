@@ -11,16 +11,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  // TODO: make dark theme
   :root {
     --theme-accent-primary: #e24f54;
     --theme-accent-primary-active: #db242a;
     --theme-accent-secondary: #88cf8f;
     --theme-accent-error: #e20505;
-    --theme-background-primary: #ffffff;
-    --theme-background-secondary: #f4f1f1;
-    --theme-ui-primary: #0a0a0a;
-    --theme-ui-secondary: #666666;
-    --theme-ui-tertiary: #cccccc;
+    --theme-background-primary: #2e2c2c;
+    --theme-background-secondary: #201e1e;
+    --theme-ui-primary: #fcfcfc;
+    --theme-ui-secondary: #dadada;
+    --theme-ui-tertiary: #7a7a7a;
   }
 }
