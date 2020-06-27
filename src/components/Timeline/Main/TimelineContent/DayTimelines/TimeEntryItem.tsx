@@ -34,6 +34,8 @@ export const TimeEntryItem: FC<{
         display: isDisplayProject(entry.pid) ? 'block' : 'none',
       }}
       title={entry.description}
-    ></div>
+    >
+      {entry.description}
+    </div>
   )
 }

@@ -9,7 +9,6 @@
   border: 1px solid $theme-ui-secondary;
   color: $theme-ui-secondary;
   cursor: pointer;
-  user-select: none;
   transition: background-color 0.2s;
 
   @include size-body1;
