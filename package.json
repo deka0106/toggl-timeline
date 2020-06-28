@@ -7,6 +7,7 @@
     "build": "react-scripts build",
     "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore ."
   },
+  "proxy": "https://www.toggl.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
