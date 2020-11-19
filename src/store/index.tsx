@@ -8,6 +8,7 @@ import React, {
 import { Workspace, Project } from 'toggl'
 import { getWeekStart } from 'utils/date'
 import { apis } from 'api'
+import { StringParam, useQueryParam } from 'use-query-params'
 
 interface Props {
   height: number
@@ -25,8 +26,15 @@ const Context = createContext<Props>({} as Props)
 
 export const Provider: FC = ({ children }) => {
   const [height, setHeight] = useState<number>(100)
-  const [week, setWeek] = useState<Date>(getWeekStart(new Date()))
   const [workspaces, setWorkspaces] = useState<Workspace[]>([])
+
+  const [param, setParam] = useQueryParam('week', StringParam)
+  const [week, setWeek] = useState<Date>(
+    getWeekStart(param ? new Date(param) : new Date())
+  )
+  useEffect(() => {
+    setParam(`${week.getFullYear()}/${week.getMonth() + 1}/${week.getDate()}`)
+  }, [setParam, week])
 
   const [workspaceProjects, setWorkspaceProjects] = useState<{
     [wid: number]: Project[]
