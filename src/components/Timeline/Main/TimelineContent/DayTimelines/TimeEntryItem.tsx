@@ -18,9 +18,17 @@ export const TimeEntryItem: FC<{
   useEffect(() => {
     const start = new Date(entry.start)
     setTop(
-      () => (height * (start.getTime() - date.getTime())) / (60 * 60 * 1000)
+      () =>
+        (height * Math.max(0, start.getTime() - date.getTime())) /
+        (60 * 60 * 1000)
     )
-    setH(() => (height * entry.duration) / (60 * 60))
+    setH(
+      () =>
+        (height *
+          (entry.duration * 1000 -
+            Math.max(0, date.getTime() - start.getTime()))) /
+        (60 * 60 * 1000)
+    )
   }, [date, entry, height])
 
   return (
