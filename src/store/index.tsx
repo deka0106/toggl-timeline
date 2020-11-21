@@ -33,7 +33,7 @@ export const Provider: FC = ({ children }) => {
     getWeekStart(param ? new Date(param) : new Date())
   )
   useEffect(() => {
-    setParam(`${week.getFullYear()}/${week.getMonth() + 1}/${week.getDate()}`)
+    setParam(`${week.getFullYear()}-${week.getMonth() + 1}-${week.getDate()}`)
   }, [setParam, week])
 
   const [workspaceProjects, setWorkspaceProjects] = useState<{
